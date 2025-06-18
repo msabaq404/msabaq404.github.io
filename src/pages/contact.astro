@@ -1,0 +1,252 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import PatternImage from "../images/pattern.svg";
+---
+
+<Layout title="Contact">
+  <section class="hero">
+    <div class="container">
+      <Image src={PatternImage} alt="Pattern" />
+      CONTACT ME
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="container">
+      <div class="center-wrapper">
+        <div class="contact-box">
+          <div class="mail">
+            <i class="fa fa-envelope"></i>
+            <div class="mail-box">
+              <span>Mail</span>
+              <a href="mailto:mhdsabaq@outlook.com">mhdsabaq@outlook.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="center-wrapper">
+        <div class="or">OR</div>
+      </div>
+
+      <div class="get-in-touch">
+        <h1>Get in touch</h1>
+        <form action="">
+          <div class="field">
+            <label for="">Your Name</label>
+            <input type="text" placeholder="Name" />
+          </div>
+
+          <div class="field">
+            <label for="">Your Email</label>
+            <input type="email" placeholder="Email" />
+          </div>
+
+          <textarea name="" id="" cols="30" rows="10" placeholder="Message"
+          ></textarea>
+          <input type="submit" value="SUBMIT" />
+        </form>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+</Layout>
+
+<style>
+  .contact {
+    display: flex;
+    min-height: calc(100vh - 70px - 200px + 45px);
+    padding: 10px;
+  }
+
+  .hero {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .hero * {
+    z-index: 100;
+  }
+
+  .hero .container img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    filter: brightness(0.75);
+    z-index: -1;
+  }
+
+  .container,
+  a {
+    color: white;
+  }
+
+  .contact .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .contact .container .center-wrapper {
+    height: calc(100vh - 70px - 200px);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .contact-box .mail {
+    display: flex;
+    align-items: center;
+  }
+  .contact-box .mail i {
+    font-size: 4rem;
+    margin-right: 10px;
+    color: var(--secondary-color);
+  }
+  .contact-box .mail .mail-box span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .contact-box .mail .mail-box a:hover {
+    color: var(--secondary-color);
+  }
+  .or {
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+  }
+  .or::before,
+  .or::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+  }
+  .or::before {
+    top: -100px;
+  }
+  .or::after {
+    bottom: -100px;
+  }
+  .get-in-touch {
+    padding: 40px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    color: black;
+    width: 400px;
+    align-self: center;
+  }
+  .get-in-touch h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .get-in-touch form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .get-in-touch .field label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  .get-in-touch .field input,
+  .get-in-touch textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 100%;
+    outline: none;
+  }
+  .get-in-touch .field input:focus,
+  .get-in-touch textarea:focus {
+    border: 2px solid var(--secondary-color);
+  }
+  .get-in-touch input[type="submit"] {
+    box-sizing: content-box;
+    width: 25%;
+    align-self: center;
+    padding: 10px 10px;
+    cursor: pointer;
+    background: linear-gradient(
+      120deg,
+      var(--secondary-color),
+      var(--secondary-color-lighter),
+      var(--secondary-color)
+    );
+    border: none;
+    background-size: 200%;
+    border-radius: 5px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 550;
+    transform: scale(1.2);
+  }
+  .get-in-touch input[type="submit"]:hover {
+    background-position: right;
+  }
+  @media (max-width: 888px) {
+    .contact .container {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-evenly;
+      max-height: unset;
+    }
+    .contact .container .center-wrapper{
+        display: block;
+        height: unset;
+    }
+   
+    .or::before,
+    .or::after {
+      transform: translateY(-50%);
+      top: 50%;
+      left: unset;
+      bottom: unset;
+      height: 5px;
+      width: 100px;
+    }
+    .or::before {
+      left: calc(-100px - 5px);
+    }
+    .or::after {
+      right: calc(-100px - 4px);
+    }
+    .get-in-touch {
+      align-self: center;
+    }
+  }
+  @media (max-height: 560px){
+    .or::before, .or::after{
+        display: none;
+    }
+  }
+  @media (max-width: 470px) {
+    .get-in-touch h1 {
+      font-size: 1.5rem;
+    }
+    .get-in-touch {
+      width: 80vw;
+    }
+    .get-in-touch input[type="submit"] {
+      font-size: 0.6rem;
+    }
+  }
+</style>

@@ -1,0 +1,144 @@
+---
+import Logo from "../images/Logo.png";
+import { Image } from "astro:assets";
+---
+
+<footer>
+  <div class="container">
+    <div class="details">
+      <div class="logo">
+        <Image src={Logo} alt="Logo" />
+        <div class="name">
+          <p>M Sabaq</p>
+          <p>Portfolio</p>
+        </div>
+      </div>
+      <p class="intro">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa odio
+        porro, d non?
+      </p>
+    </div>
+    <div class="contact">
+      <p class="heading">Contact Me</p>
+      <div class="mail">
+        <i class="fa fa-envelope"></i>
+        <div class="mail-box">
+          <span>Mail</span>
+          <a href="mailto:mhdsabaq@outlook.com">mhdsabaq@outlook.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p>&copy; {new Date().getFullYear()} M Sabaq</p>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--bg-color);
+    color: white;
+    padding-top: 20px;
+  }
+  footer p {
+    font-size: 1.5rem;
+  }
+  footer a {
+    color: white;
+  }
+  footer a:hover {
+    color: var(--secondary-color);
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+  .logo {
+    display: flex;
+  }
+  .logo img {
+    height: 65px;
+    width: 65px;
+  }
+  .logo p {
+    margin-left: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .logo p:nth-child(2) {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+  }
+  .details .intro {
+    margin-top: 10px;
+    margin-left: 85px;
+    width: 35%;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .contact .heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 300px;
+  }
+  .contact .mail {
+    display: flex;
+    margin: auto 0;
+  }
+  .contact .mail i {
+    font-size: 2.7rem;
+    margin-right: 10px;
+    color: var(--secondary-color);
+    align-self: center;
+  }
+  .contact .mail .mail-box span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  footer > p {
+    display: inline-block;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    background-color: var(--bg-color-darker);
+    font-weight: 500;
+  }
+  @media (max-width: 650px) {
+    footer {
+      padding: 20px;
+    }
+    .container {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .logo {
+      margin-bottom: 20px;
+    }
+    .logo p {
+      margin-left: 10px;
+      font-size: 1.5rem;
+    }
+    .logo img {
+      height: 50px;
+      width: 50px;
+    }
+    .details .intro {
+      margin-left: 0px;
+      width: 80%;
+    }
+
+    .contact .heading {
+      width: 100%;
+    }
+    .contact .mail i {
+      font-size: 2rem;
+    }
+    .contact .mail .mail-box span {
+      font-size: 1.2rem;
+    }
+  }
+</style>

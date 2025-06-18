@@ -1,11 +1,425 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import NameGraphic from "../components/NameGraphic.astro";
+import Layout from "../layouts/Layout.astro";
+import HeroImage from "../images/HeroImage.svg";
+import FrontendImage from "../images/frontend.svg";
+import BackendImage from "../images/backend.png";
+import UIUXImage from "../images/uiux.png";
+--- 
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
+<Layout title="Home">
+  <section class="hero">
+    <div class="container">
+      <div class="intro">
+        <h1>Hello,</h1>
+        <h2>I'm</h2>
+        <NameGraphic />
+        <p>-- Developer</p>
+      </div>
+      <Image class="hero-image" src={HeroImage} alt="Hero" />
+    </div>
+  </section>
 
-<Layout>
-	<Welcome />
+  <div class="divider"></div>
+
+  <section class="about">
+    <div class="container">
+      <h1>About Me</h1>
+      <p>
+        Been developing web applications for 5 years, creating modern,
+        user-friendly solutions with a focus on performance and scalability
+      </p>
+    </div>
+  </section>
+
+  <section class="skills">
+    <div class="container">
+      <h1>Skills</h1>
+      <div class="skills-cards">
+        <div class="card">
+          <Image src={FrontendImage} alt="Frontend" />
+          <h2>Frontend<br />Development</h2>
+          <p>
+            Crafting responsive, interactive, and visually appealing user
+            interfaces using modern JavaScript frameworks and CSS libraries.
+          </p>
+          <p>Using:</p><br />
+          <p id="technologies">
+            <span class="technology">
+              <i class="fa-brands fa-html5"></i><br />
+              <span class="text-wrap">HTML</span>
+            </span>
+            <span class="technology">
+              <i class="fa-brands fa-css3-alt"></i><br />
+              <span class="text-wrap">CSS</span>
+            </span>
+            <span class="technology">
+              <i class="fa-brands fa-js"></i><br />
+              <span class="text-wrap">JavaScript</span>
+            </span>
+            <span class="technology">
+              <i class="fa-brands fa-react"></i><br />
+              <span class="text-wrap">React</span>
+            </span>
+            <span class="technology">
+              <img src="/tailwind.svg" alt="Tailwind CSS" /><br />
+              <span class="text-wrap">Tailwind</span>
+            </span>
+            <span class="technology">
+              <i class="fa-brands fa-flutter"></i><br />
+              <span class="text-wrap">Fluter</span>
+            </span>
+          </p>
+        </div>
+        <div class="card">
+          <Image src={BackendImage} alt="Backend" />
+          <h2>Backend<br />Development</h2>
+          <p>
+            Building scalable and efficient server-side solutions with Node.js,
+            Express, Python and robust database management.
+          </p>
+          <p>Using:</p><br />
+          <p id="technologies">
+            <span class="technology">
+              <i class="fa-brands fa-node-js"></i><br />
+              <span class="text-wrap">NodeJS</span>
+            </span>
+            <span class="technology">
+              <i class="fa-brands fa-python"></i><br />
+              <span class="text-wrap">Python</span>
+            </span>
+            <span class="technology">
+              <i class="fa-solid fa-database"></i><br />
+              <span class="text-wrap">SQL</span>
+            </span>
+            <span class="technology">
+              <i class="fa-brands fa-golang"></i><br />
+              <span class="text-wrap">Go</span>
+            </span>
+          </p>
+        </div>
+        <div class="card">
+          <Image src={UIUXImage} alt="UI UX" />
+          <h2>UI/UX<br />Development</h2>
+          <p>
+            Designing intuitive user experiences with tools like Figma and
+            transforming them into seamless interfaces.
+          </p>
+          <p>Using:</p><br />
+          <p id="technologies">
+            <span class="technology">
+              <i class="fa-brands fa-figma"></i><br />
+              <span class="text-wrap">Figma</span>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
 </Layout>
+
+<style>
+  .hero {
+    height: calc(100vh - 70px);
+  }
+  .hero .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    gap: 100px;
+  }
+
+  .intro {
+    animation: slideFromLeft 1s ease-out forwards;
+  }
+
+  @keyframes slideFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1rem;
+    margin-top: -10px;
+  }
+  h1,
+  h2,
+  p {
+    color: white;
+  }
+
+  .hero-image {
+    width: 0;
+    max-height: 100%;
+    object-fit: contain;
+    flex-grow: 1;
+    aspect-ratio: 947/845;
+    object-fit: contain;
+    animation: slideFromRight 1s ease-out forwards;
+  }
+
+  @keyframes slideFromRight {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 1300px) {
+    .hero .container {
+      flex-direction: column;
+      gap: 20px;
+      max-width: clamp(300px, 80vw, 1200px);
+      justify-content: space-around;
+    }
+
+    .hero-image {
+      height: 0;
+      width: unset;
+      max-width: 100%;
+    }
+
+    .hero .intro {
+      text-align: center;
+    }
+
+    .about .container {
+      max-width: 1000px;
+    }
+    .about .container p {
+      width: 75%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .hero .container {
+      max-width: 95vw;
+    }
+  }
+
+  @media (max-height: 680px) {
+    .hero {
+      height: auto;
+    }
+    .hero-image {
+      width: 100%;
+      height: unset;
+    }
+  }
+
+  /* About section */
+
+  .about {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 1),
+        rgba(0, 0, 0, 0.524),
+        rgba(0, 0, 0, 1)
+      ),
+      url("/CodeBG.jpg");
+  }
+
+  .about .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+  }
+
+  .about p {
+    width: 50%;
+    font-size: 1.75rem;
+    margin-top: 20px;
+  }
+
+  .about h1::before {
+    content: "";
+    display: inline-block;
+    height: 15px;
+    width: 225px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: -10px;
+    top: -5px;
+    z-index: -1;
+    border-radius: 2px;
+  }
+
+  .about h1 {
+    z-index: 1;
+    position: relative;
+  }
+
+  @media (max-width: 470px) {
+    .about h1 {
+      font-size: 3rem;
+    }
+    .about h1::before {
+      width: 100px;
+    }
+  }
+  @media (max-width: 360px) {
+    .about p {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* Skills Section */
+
+  .skills {
+    background-color: black;
+    padding-bottom: 20px;
+  }
+
+  .skills h1 {
+    margin-bottom: 20px;
+  }
+
+  .skills-cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .skills-cards .card {
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+
+  .skills-cards .card h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+    position: relative;
+  }
+
+  .skills-cards .card h2::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 10px;
+    background-color: var(--secondary-color);
+    bottom: -20px;
+    left: 0;
+    border-radius: 10px;
+  }
+
+  .skills-cards .card img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .skills-cards .card:nth-child(3) img {
+    top: -70px;
+    scale: 0.9;
+  }
+
+  .skills-cards .card p:first-of-type {
+    margin-top: 35px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    width: 80%;
+  }
+
+  #technologies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skills-cards .card p#technologies .technology {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    text-align: center;
+    width: 90px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+  }
+
+  .skills-cards .card p#technologies .technology:hover {
+    scale: 1.1;
+  }
+
+  .skills-cards .card p#technologies .technology:hover .text-wrap {
+    color: var(--secondary-color);
+  }
+
+  p#technologies span.technology .text-wrap {
+    font-size: 1rem;
+    transition: 0.3s ease-in-out all;
+  }
+
+  p#technologies span.technology img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 900px) {
+    .skills-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skills-cards .card {
+      width: 350px;
+      margin-bottom: 50px;
+    }
+    .skills-cards .card:nth-child(2) {
+      margin-bottom: 65px;
+    }
+    .skills-cards .card img {
+      top: -50px;
+    }
+
+    .skills-cards .card:nth-child(3) img {
+      top: -60px;
+    }
+
+    .skills-cards .card p#technologies .technology {
+      margin: 5px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .skills-cards .card {
+      width: 95%;
+    }
+  }
+</style>
