@@ -2,10 +2,11 @@
 import { Image } from "astro:assets";
 import NameGraphic from "../components/NameGraphic.astro";
 import Layout from "../layouts/Layout.astro";
-import HeroImage from "../images/HeroImage.svg";
+import HeroImage from "../images/HeroImage.webp";
 import FrontendImage from "../images/frontend.svg";
-import BackendImage from "../images/backend.png";
-import UIUXImage from "../images/uiux.png";
+import BackendImage from "../images/backend.webp";
+import UIUXImage from "../images/uiux.webp";
+import Projects from "../components/Projects.astro";
 --- 
 
 <Layout title="Home">
@@ -17,7 +18,7 @@ import UIUXImage from "../images/uiux.png";
         <NameGraphic />
         <p>-- Developer</p>
       </div>
-      <Image class="hero-image" src={HeroImage} alt="Hero" />
+      <Image class="hero-image" src={HeroImage} width={947} alt="Hero" />
     </div>
   </section>
 
@@ -117,6 +118,29 @@ import UIUXImage from "../images/uiux.png";
       </div>
     </div>
   </section>
+
+  <Projects projects={[
+    {
+      title: "Photography Portfolio",
+      imgSrc: "/photography.webp",
+      description: "A sample photography portfolio showcasing professional photo galleries with responsive design and smooth animations.",
+      projectURL: "https://msabaq404.github.io/photography"
+    }, 
+    {
+      title: "Restaurant Ordering Site",
+      imgSrc: "/restaurant.webp",
+      description: "A restaurant website where customers can browse menus, customize orders, and place food delivery requests online.",
+      projectURL: "https://msabaq404.github.io/restaurant-site"
+    },
+    {
+      title: "Ready-Made Blog App",
+      imgSrc: "/blog.webp",
+      description: "A customizable blogging platform that anyone can use for their personal or business blog with built-in themes and features.",
+      projectURL: "https://msabaq404.github.io/blog"
+    }
+  ]}/>
+
+  
 
   <div class="divider"></div>
 </Layout>
@@ -237,7 +261,8 @@ import UIUXImage from "../images/uiux.png";
         rgba(0, 0, 0, 0.524),
         rgba(0, 0, 0, 1)
       ),
-      url("/CodeBG.jpg");
+      url("/CodeBG.webp");
+    background-size: cover;
   }
 
   .about .container {

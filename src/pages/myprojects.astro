@@ -1,6 +1,684 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 ---
-<Layout title="My Projects" >
 
+<Layout title="My Projects">
+  <section class="projects-hero">
+    <div class="container">
+      <h1>My Projects</h1>
+      <p>A showcase of my recent development work and creative solutions</p>
+    </div>
+  </section>
+  <section class="projects-blog">
+    <div class="container">
+      <article class="project-post featured">
+        <div class="project-header">
+          <div class="project-meta">
+            <span class="project-category">Featured Project</span>
+            <span class="project-date">2024</span>
+          </div>
+          <h2>Photography Portfolio</h2>
+          <p class="project-excerpt">
+            A sample photography portfolio showcasing professional photo
+            galleries with responsive design and smooth animations.
+          </p>
+        </div>
+        <div class="project-image">
+          <div class="slideshow" data-project="photography">
+            <div class="slides">
+              <img
+                src="/photography.webp"
+                alt="Photography Portfolio"
+                class="slide active"
+              />
+              <img
+                src="/photography1.webp"
+                alt="Photography Portfolio"
+                class="slide"
+              />
+              <img
+                src="/photography2.webp"
+                alt="Photography Portfolio"
+                class="slide"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <p class="project-description">
+            Built with modern web technologies to create an immersive visual
+            experience for photographers to showcase their work. This portfolio
+            demonstrates advanced CSS animations, responsive grid layouts, and
+            optimized image loading techniques.
+          </p>
+
+          <div class="tech-stack">
+            <h4>Technologies Used:</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Responsive Design</span>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li>Responsive image galleries with lightbox functionality</li>
+              <li>Smooth scroll animations and transitions</li>
+              <li>Responsive design</li>
+              <li>Optimized image loading and performance</li>
+            </ul>
+          </div>
+
+          <div class="project-links">
+            <a
+              href="https://msabaq404.github.io/photography"
+              target="_blank"
+              class="btn-primary">View Live Demo</a
+            >
+            <a href="https://github.com/msabaq404/photography" class="btn-secondary">View Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-post featured">
+        <div class="project-header">
+          <div class="project-meta">
+            <span class="project-category">Full-Stack</span>
+            <span class="project-date">2024</span>
+          </div>
+          <h2>Restaurant Ordering Site</h2>
+          <p class="project-excerpt">
+            A restaurant website where customers can browse menus, customize
+            orders, and place food delivery requests online.
+          </p>
+        </div>
+        <div class="project-image">
+          <div class="slideshow" data-project="restaurant">
+            <div class="slides">
+              <img
+                src="/restaurant.webp"
+                alt="Restaurant Ordering Site"
+                class="slide active"
+              />
+              <img
+                src="/restaurant1.webp"
+                alt="Restaurant Ordering Site"
+                class="slide"
+              />
+              <img
+                src="/restaurant2.webp"
+                alt="Restaurant Ordering Site"
+                class="slide"
+              />
+              <img
+                src="/restaurant3.webp"
+                alt="Restaurant Ordering Site"
+                class="slide"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <p class="project-description">
+            A modern restaurant ordering platform built with Svelte and
+            TailwindCSS, featuring an intuitive menu browsing system with
+            category filters and VEG mode support. Customers can customize their
+            orders and add items to a shopping cart, with real-time updates and
+            a seamless checkout experience.
+          </p>
+
+          <div class="tech-stack">
+            <h4>Technologies Used:</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Svelte</span>
+              <span class="tech-tag">TailwindCSS</span>
+              <span class="tech-tag">Astro</span>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li>Interactive menu browsing with categories</li>
+              <li>Shopping cart with real-time updates</li>
+              <li>Order customization</li>
+              <li>VEG Mode Support</li>
+            </ul>
+          </div>
+
+          <div class="project-links">
+            <a
+              href="https://msabaq404.github.io/restaurant-site"
+              target="_blank"
+              class="btn-primary">View Live Demo</a
+            >
+            <a href="https://github.com/msabaq404/restaurant-site" class="btn-secondary">View Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-post featured">
+        <div class="project-header">
+          <div class="project-meta">
+            <span class="project-category">Content Management</span>
+            <span class="project-date">2024</span>
+          </div>
+          <h2>Ready-Made Blog App</h2>
+          <p class="project-excerpt">
+            A customizable blogging platform that anyone can use for their
+            personal or business blog with built-in themes and features.
+          </p>
+        </div>
+        <div class="project-image">
+          <div class="slideshow" data-project="blog">
+            <div class="slides">
+              <img
+                src="/blog.webp"
+                alt="Ready-Made Blog App"
+                class="slide active"
+              />
+              <img src="/blog1.webp" alt="Ready-Made Blog App" class="slide" />
+              <img src="/blog2.webp" alt="Ready-Made Blog App" class="slide" />
+              <img src="/blog3.webp" alt="Ready-Made Blog App" class="slide" />
+            </div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <p class="project-description">
+            A modern blogging platform built with Astro and Svelte, featuring
+            seamless content management through Sanity CMS. The application
+            automatically rebuilds via GitHub Actions when content is updated,
+            ensuring your blog is always current with dark mode support and SEO
+            optimization.
+          </p>
+
+          <div class="tech-stack">
+            <h4>Technologies Used:</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Astro</span>
+              <span class="tech-tag">Svelte</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Sanity CMS</span>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li>Content is fetched from Sanity CMS</li>
+              <li>
+                Website is automatically rebuilt by GitHub Actions when content
+                is created or updated
+              </li>
+              <li>DarkMode support</li>
+              <li>SEO optimized and fast loading</li>
+              <li>Comment system and social sharing</li>
+            </ul>
+          </div>          <div class="project-links">
+            <a
+              href="https://msabaq404.github.io/blog"
+              target="_blank"
+              class="btn-primary">View Live Demo</a
+            >
+            <a href="https://github.com/msabaq404/blog" class="btn-secondary">View Source Code</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-post">
+        <div class="project-header">
+          <div class="project-meta">
+            <span class="project-category">Educational App</span>
+            <span class="project-date">2024</span>
+          </div>
+          <h2>Z-Quizlet</h2>
+          <p class="project-excerpt">
+            A simple quiz application designed specifically for UIET students to prepare for their exams and assessments.
+          </p>
+        </div>
+        <div class="project-image">
+          <div class="slideshow" data-project="zquizlet">
+            <div class="slides">
+              <img
+                src="/z-quizlet.webp"
+                alt="Z-Quizlet App"
+                class="slide active"
+              />
+              <img src="/z-quizlet1.webp" alt="Z-Quizlet App" class="slide" />
+            </div>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <p class="project-description">
+            A user-friendly quiz platform built for UIET students to enhance their exam preparation. The application provides 
+            an interactive learning experience with review features after quiz ends.
+          </p>
+
+          <div class="tech-stack">
+            <h4>Technologies Used:</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">TailwindCSS</span>
+              <span class="tech-tag">AlpineJS</span>
+            </div>
+          </div>
+
+          <div class="project-features">
+            <h4>Key Features:</h4>
+            <ul>
+              <li>Interactive quiz interface for UIET students</li>
+              <li>Review system after quiz completion</li>
+              <li>Current Streak feature</li>
+              <li>Topic-wise quiz categorization</li>
+            </ul>
+          </div>
+
+          <div class="project-links">
+            <a
+              href="https://z-quizzes.github.io"
+              target="_blank"
+              class="btn-primary">View Live Demo</a
+            >
+            <a href="https://github.com/z-quizzes/z-quizzes.github.io" class="btn-secondary">View Source Code</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  let currentSlideIndex: Record<string, number> = {};
+
+  function changeSlide(project: string, direction: number): void {
+    const slideshow = document.querySelector(
+      `[data-project="${project}"]`
+    ) as HTMLElement;
+    const slides = slideshow.querySelectorAll(
+      ".slide"
+    ) as NodeListOf<HTMLElement>;
+
+    // Initialize if not exists
+    if (!currentSlideIndex[project]) {
+      currentSlideIndex[project] = 0;
+    }
+
+    // Remove current active class
+    slides[currentSlideIndex[project]].classList.remove("active");
+
+    // Update index
+    currentSlideIndex[project] += direction;
+
+    // Wrap around
+    if (currentSlideIndex[project] >= slides.length) {
+      currentSlideIndex[project] = 0;
+    }
+    if (currentSlideIndex[project] < 0) {
+      currentSlideIndex[project] = slides.length - 1;
+    }
+
+    // Add new active class
+    slides[currentSlideIndex[project]].classList.add("active");
+  }
+  // Auto-advance slides every 5 seconds
+  setInterval((): void => {
+    const projects: string[] = ["photography", "restaurant", "blog", "zquizlet"];
+    projects.forEach((project: string) => {
+      const slideshow = document.querySelector(
+        `[data-project="${project}"]`
+      ) as HTMLElement;
+      if (slideshow) {
+        changeSlide(project, 1);
+      }
+    });
+  }, 5000);
+
+  // Initialize slide indexes
+  document.addEventListener("DOMContentLoaded", (): void => {
+    currentSlideIndex = {
+      photography: 0,
+      restaurant: 0,
+      blog: 0,
+      zquizlet: 0,
+    };
+  });
+</script>
+
+<style>
+  .projects-hero {
+    background: linear-gradient(
+      to bottom,
+      var(--bg-color) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    padding: 100px 0 80px;
+    text-align: center;
+  }
+
+  .projects-hero h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .projects-hero h1::before {
+    content: "";
+    display: inline-block;
+    height: 15px;
+    width: 300px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+    z-index: -1;
+    border-radius: 2px;
+  }
+
+  .projects-hero p {
+    font-size: 1.5rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .projects-blog {
+    background-color: black;
+    padding: 80px 10px;
+    margin-top: -5px;
+  }
+
+  .projects-blog .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .project-post {
+    margin-bottom: 80px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .project-post:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .project-post.featured {
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 30px;
+    margin-left: -30px;
+  }
+
+  .project-header {
+    margin-bottom: 30px;
+  }
+
+  .project-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .project-category {
+    background-color: var(--secondary-color);
+    color: black;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .project-date {
+    color: #ccc;
+    font-size: 0.9rem;
+  }
+
+  .project-header h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.2;
+  }
+
+  .project-excerpt {
+    font-size: 1.3rem;
+    color: #ccc;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .project-image {
+    margin: 30px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .project-image img {
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .project-image:hover img {
+    transform: scale(1.02);
+  }
+
+  .project-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .project-description {
+    color: #ddd;
+    margin-bottom: 30px;
+  }
+
+  .tech-stack {
+    margin-bottom: 30px;
+  }
+
+  .tech-stack h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tech-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--secondary-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .project-features {
+    margin-bottom: 40px;
+  }
+
+  .project-features h4 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .project-features ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .project-features li {
+    color: #ccc;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+  }
+
+  .project-features li::before {
+    content: "→";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+  }
+
+  .project-links {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background-color: var(--secondary-color);
+    color: black;
+  }
+
+  .btn-primary:hover {
+    background-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+  }
+  /* Slideshow Styles */
+  .slideshow {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2/1;
+    overflow: hidden;
+  }
+
+  .slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .slide.active {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .projects-hero h1 {
+      font-size: 3rem;
+    }
+
+    .projects-hero h1::before {
+      width: 200px;
+    }
+
+    .projects-hero p {
+      font-size: 1.2rem;
+      padding: 0 20px;
+    }
+
+    .project-post.featured {
+      padding-left: 20px;
+      margin-left: -20px;
+    }
+
+    .project-header h2 {
+      font-size: 2rem;
+    }
+
+    .project-excerpt {
+      font-size: 1.1rem;
+    }
+
+    .project-content {
+      font-size: 1rem;
+    }
+  
+    .project-links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects-hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .projects-hero h1::before {
+      width: 150px;
+    }
+
+    .projects-blog .container {
+      padding: 0 15px;
+    }
+
+    .project-post {
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+    }
+
+    .project-header h2 {
+      font-size: 1.8rem;
+    }
+
+    .tech-tags {
+      gap: 8px;
+    }
+
+    .tech-tag {
+      font-size: 0.8rem;
+      padding: 4px 8px;
+    }
+
+   
+  }
+</style>

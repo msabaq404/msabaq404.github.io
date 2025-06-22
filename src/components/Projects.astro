@@ -1,0 +1,169 @@
+---
+type Project = {
+  title: string;
+  imgSrc: string;
+  description: string;
+  projectURL: string;
+};
+
+const { projects } = Astro.props;
+---
+
+<section class="myprojects">
+  <div class="container">
+    <h1><span>Websites</span> I developed</h1>
+    <div class="project-cards">
+      {
+        projects.map((project: Project) => {
+          const { title, imgSrc, description, projectURL } = project;
+
+          return (
+            <div class="project-card">
+              <div class="img">
+                <img src={imgSrc} alt="Project Screenshot" />
+              </div>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <a href={projectURL} class="btn">
+                View Project
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+                  />
+                </svg>
+              </a>
+            </div>
+          );
+        })
+      }
+    </div>
+    <a class="see-more" href="/myprojects">See more</a>
+  </div>
+</section>
+
+<style>
+  .myprojects {
+    margin-top: -4px;
+    background-color: #000;
+    color: #fff;
+  }
+  .myprojects h1 {
+    padding: 20px 0;
+    font-size: 4rem;
+    color: #fff;
+  }
+  .myprojects h1 span {
+    color: var(--secondary-color);
+  }
+  .project-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+  .project-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    margin: 15px auto;
+    padding: 20px;
+    width: 80%;
+    transition: transform 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .project-card:hover {
+    transform: scale(1.05);
+  }
+  .project-card .img {
+    width: 100%;
+    aspect-ratio: 2/1;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  .project-card .img img {
+    object-fit: cover;
+    width: 100%;
+  }
+  .project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .project-card p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+  .project-card a {
+    align-self: end;
+    position: relative;
+    align-items: center;
+    width: fit-content;
+    padding: 10px 20px;
+    border: 2px solid var(--secondary-color);
+    justify-content: start;
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 400;
+  }
+  .project-card a svg {
+    position: absolute;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease;
+  }
+  .project-card a:hover svg {
+    transform: translateY(-50%) translateX(0.5rem);
+  }
+  .see-more {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .see-more:hover {
+    color: var(--secondary-color-lighter);
+    scale: 1.02;
+  }
+
+  @media screen and (max-width: 768px) {
+    .myprojects h1 span {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .myprojects h1 {
+      font-size: 2.5rem;
+    }
+    .myprojects h1 span {
+      display: block;
+      font-size: 3.5rem;
+    }
+    .project-card {
+      width: 100%;
+    }
+  }
+</style>
